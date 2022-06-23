@@ -1,7 +1,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var button: UIButton!
     
     var isBlack: Bool = false {
         didSet {
@@ -13,20 +12,41 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func onBut(_ sender: Any) {
-        isBlack.toggle()
-    }
-    
+    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var passwordFiled: UITextField!
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        self.bruteForce(passwordToUnlock: "1!gr")
+        //self.bruteForce(passwordToUnlock: "1!gr")
         
         // Do any additional setup after loading the view.
     }
     
-    func bruteForce(passwordToUnlock: String) {
+    //MARK: - Actions
+    
+    @IBAction func onBut(_ sender: Any) {
+        isBlack.toggle()
+    }
+    
+    @IBAction func generate(_ sender: Any) {
+
+        var password = String()
+        
+        password += String(password.digits.randomElement() ?? "0")
+        password += String(password.lowercase.randomElement() ?? "a")
+        password += String(password.uppercase.randomElement() ?? "A")
+        password += String(password.punctuation.randomElement() ?? "!")
+        print(password)
+        self.passwordFiled.text = password
+       // self.bruteForce(passwordToUnlock: password)
+    }
+    
+    //MARK: - Private functions
+    private func bruteForce(passwordToUnlock: String) {
         let ALLOWED_CHARACTERS:   [String] = String().printable.map { String($0) }
 
         var password: String = ""
@@ -44,7 +64,7 @@ class ViewController: UIViewController {
 }
 
 
-
+//MARK: - Extension functions
 extension String {
     var digits:      String { return "0123456789" }
     var lowercase:   String { return "abcdefghijklmnopqrstuvwxyz" }
