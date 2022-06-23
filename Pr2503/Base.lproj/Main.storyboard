@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyN-4k-6eh">
-                                <rect key="frame" x="166" y="332" width="42" height="21"/>
+                                <rect key="frame" x="139" y="332" width="96" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -60,6 +60,7 @@
                         <outlet property="generateButton" destination="OX9-ED-5iA" id="Lle-my-ZMP"/>
                         <outlet property="indicatorView" destination="pY5-5i-NBi" id="w4J-vo-0Gw"/>
                         <outlet property="passwordFiled" destination="LSX-Lp-Rql" id="AqN-JK-6H9"/>
+                        <outlet property="passwordLabel" destination="LyN-4k-6eh" id="jtJ-vg-896"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
